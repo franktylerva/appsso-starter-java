@@ -1,0 +1,19 @@
+id: 017fa077-8e0c-4ec8-843a-e4711b94e564
+timestamp: 2023-09-07T16:15:31Z
+username: guest
+source: TAP-GUI
+accelerator:
+  name: appsso-starter-java
+  source:
+    image: europe-docker.pkg.dev/tap-sandbox-dev/tap-bits/tap-packages@sha256:d5e2b38cbd6ec1127e6df866a9356ed8adcad0e71293e7abb06840dbb02eeaf9
+fragments:
+  - name: build-wrapper-gradle
+    source:
+      image: europe-docker.pkg.dev/tap-sandbox-dev/tap-bits/tap-packages@sha256:5480259d6a29a11f0cc482cd304501d74ccd89dd7207f2d639d6f0d8eedc3bf8
+  - name: tap-workload
+    source:
+      image: europe-docker.pkg.dev/tap-sandbox-dev/tap-bits/tap-packages@sha256:d9c7d8d322f0740666ba7c752a9174d1eb66274338c4f0e211edb1d448104c2a
+options:
+  appssoOfferingName: test-login
+  includeBuildToolWrapper: true
+  projectName: appsso-starter-java
